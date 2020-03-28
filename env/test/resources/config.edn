@@ -1,1 +1,1 @@
-{}
+{:database-url "jdbc:postgresql://localhost/trader?user=postgres&password=postgres"}

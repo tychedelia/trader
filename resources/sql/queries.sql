@@ -1,8 +1,8 @@
 -- :name create-user! :! :n
 -- :doc creates a new user record
 INSERT INTO users
-    (id, first_name, last_name, email, pass)
-VALUES (:id, :first_name, :last_name, :email, :pass);
+    (first_name, last_name, email, pass)
+VALUES (:first_name, :last_name, :email, :pass);
 
 -- :name update-user! :! :n
 -- :doc updates an existing user record
