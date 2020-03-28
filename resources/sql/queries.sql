@@ -14,7 +14,14 @@ WHERE id = :id;
 
 -- :name get-user :? :1
 -- :doc retrieves a user record given the id
-SELECT *
+SELECT id,
+       first_name,
+       last_name,
+       email,
+       admin,
+       last_login,
+       is_active,
+       pass
 FROM users
 WHERE id = :id;
 
@@ -24,19 +31,13 @@ DELETE
 FROM users
 WHERE id = :id;
 
--- :name get-access-token :? :1
+-- :name get-token :? :1
 -- :doc retrieves the most recent access token
-SELECT *
+SELECT id, token_type, token, expiry
 FROM td_auth
-WHERE token_type = 'access_token';
+WHERE token_type = :token_type;
 
--- :name get-refresh-token :? :1
--- :doc retrieves the most recent refresh token
-SELECT *
-FROM td_auth
-WHERE token_type = 'refresh_token';
-
--- :name update-token :! :n
+-- :name update-token! :! :n
 -- :doc update or insert a token
 INSERT INTO td_auth (token_type, token, expiry)
 VALUES (:token_type, :token, :expiry)

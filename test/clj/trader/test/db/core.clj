@@ -35,3 +35,16 @@
             :last_login nil
             :is_active  nil}
            (db/get-user t-conn {:id 1})))))
+
+(deftest test-tokens
+  (jdbc/with-db-transaction [t-conn *db*]
+    (jdbc/db-set-rollback-only! t-conn)
+    (is (= 1 (db/update-token!
+              t-conn {:token_type "refresh_token"
+                      :token "abcd1234"
+                      :expiry nil})))
+    (is (= {:id 1
+            :token_type "refresh_token"
+            :token "abcd1234"
+            :expiry nil}
+           (db/get-token t-conn {:token_type "refresh_token"})))))
