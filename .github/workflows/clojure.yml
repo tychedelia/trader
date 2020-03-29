@@ -30,6 +30,6 @@ jobs:
     - name: Install dependencies
       run: lein deps
     - name: Lint code
-      run: clj -Sdeps '{:deps {clj-kondo {:mvn/version "RELEASE"}}}' -m clj-kondo.main --lint src
+      run: clojure -Sdeps '{:deps {clj-kondo {:mvn/version "RELEASE"}}}' -m clj-kondo.main --lint src
     - name: Run tests
       run: lein test
