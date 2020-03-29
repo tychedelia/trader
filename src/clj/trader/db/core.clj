@@ -11,10 +11,7 @@
   (:import org.postgresql.util.PGobject
            java.sql.Array
            clojure.lang.IPersistentMap
-           clojure.lang.IPersistentVector
-           [java.sql
-            BatchUpdateException
-            PreparedStatement]))
+           clojure.lang.IPersistentVector))
 (defstate ^:dynamic *db*
   :start (if-let [jdbc-url (env :database-url)]
            (conman/connect! {:jdbc-url jdbc-url})

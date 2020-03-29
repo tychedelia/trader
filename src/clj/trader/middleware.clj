@@ -1,18 +1,13 @@
 (ns trader.middleware
   (:require
     [trader.env :refer [defaults]]
-    [cheshire.generate :as cheshire]
-    [cognitect.transit :as transit]
     [clojure.tools.logging :as log]
     [trader.layout :refer [error-page]]
     [ring.middleware.anti-forgery :refer [wrap-anti-forgery]]
     [trader.middleware.formats :as formats]
     [muuntaja.middleware :refer [wrap-format wrap-params]]
-    [trader.config :refer [env]]
     [ring-ttl-session.core :refer [ttl-memory-store]]
-    [ring.middleware.defaults :refer [site-defaults wrap-defaults]])
-  
-           )
+    [ring.middleware.defaults :refer [site-defaults wrap-defaults]]))
 
 (defn wrap-internal-error [handler]
   (fn [req]

@@ -1,7 +1,6 @@
 (ns trader.routes.home
   (:require
    [trader.layout :as layout]
-   [trader.db.core :as db]
    [clojure.java.io :as io]
    [trader.middleware :as middleware]
    [ring.util.response]

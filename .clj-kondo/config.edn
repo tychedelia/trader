@@ -1,0 +1,3 @@
+{:lint-as {clojure.java.jdbc/with-db-transaction clojure.core/let
+           mount.core/defstate clj-kondo.lint-as/def-catch-all
+           reagent.core/with-let clojure.core/let}}

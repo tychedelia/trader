@@ -4,15 +4,11 @@
     [reagent.dom :as rdom]
     [reagent.core :as r]
     [re-frame.core :as rf]
-    [goog.events :as events]
-    [goog.history.EventType :as HistoryEventType]
     [markdown.core :refer [md->html]]
     [trader.ajax :as ajax]
     [trader.events]
     [reitit.core :as reitit]
-    [reitit.frontend.easy :as rfe]
-    [clojure.string :as string])
-  (:import goog.History))
+    [reitit.frontend.easy :as rfe]))
 
 (defn nav-link [uri title page]
   [:a.navbar-item

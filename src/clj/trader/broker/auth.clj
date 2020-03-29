@@ -2,7 +2,7 @@
   (:require
    [trader.db.core :refer [*db*] :as db]
    [clj-http.client :as client]
-   [cheshire.core :refer [generate-string parse-string]]
+   [cheshire.core :refer [parse-string]]
    [clojure.java.jdbc :as jdbc])
   )
 

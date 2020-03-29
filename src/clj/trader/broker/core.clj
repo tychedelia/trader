@@ -1,9 +1,7 @@
 (ns trader.broker.core
   (:require
    [trader.broker.auth :as auth]
-   [clj-http.client :as client]
-   [cheshire.core :refer [generate-string parse-string]])
-  )
+   [clj-http.client :as client]))
 
 (def base-url "https://api.tdameritrade.com/v1")
 
