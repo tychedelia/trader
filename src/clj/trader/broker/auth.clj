@@ -1,10 +1,12 @@
 (ns trader.broker.auth
   (:require
    [trader.db.core :refer [*db*] :as db]
-   [trader.broker.core :refer [base-url]]
    [clj-http.client :as client]
    [cheshire.core :refer [generate-string parse-string]]
-   [clojure.java.jdbc :as jdbc]))
+   [clojure.java.jdbc :as jdbc])
+  )
+
+(def base-url "https://api.tdameritrade.com/v1")
 
 (defn get-api-key []
   (jdbc/with-db-transaction [tx *db*]

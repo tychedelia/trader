@@ -1,10 +1,9 @@
 (ns trader.broker.core
   (:require
-   [trader.db.core :refer [*db*] :as db]
    [trader.broker.auth :as auth]
    [clj-http.client :as client]
-   [cheshire.core :refer [generate-string parse-string]]
-   [clojure.java.jdbc :as jdbc]))
+   [cheshire.core :refer [generate-string parse-string]])
+  )
 
 (def base-url "https://api.tdameritrade.com/v1")
 
@@ -16,7 +15,7 @@
    :headers (default-headers)})
 
 (defn account [id]
-  (:body (client/get (str base-url "/accounts/" id) (default-body)))) 
+  (:body (client/get (str base-url "/accounts/" id) (default-body))))
 
 (defn accounts []
   (:body (client/get (str base-url "/accounts") (default-body))))
