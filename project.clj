@@ -6,6 +6,7 @@
   :dependencies [[ch.qos.logback/logback-classic "1.2.3"]
                  [cheshire "5.10.0"]
                  [cljs-ajax "0.8.0"]
+                 [clj-http "3.10.0"]
                  [clojure.java-time "0.3.2"]
                  [com.cognitect/transit-clj "1.0.324"]
                  [com.google.javascript/closure-compiler-unshaded "v20191027" :scope "provided"]
