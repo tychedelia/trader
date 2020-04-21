@@ -45,8 +45,7 @@ jobs:
         username: ${{ github.actor }} 
         password: ${{ github.token }}
         registry: docker.pkg.github.com 
-        name: trader
-        repository: jmcelwain/trader
+        repository: jmcelwain/trader/trader
         tags: latest
       env:
         DOCKER_BUILDKIT: 1
