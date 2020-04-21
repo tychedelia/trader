@@ -39,3 +39,13 @@ jobs:
       run: clojure -Sdeps '{:deps {clj-kondo {:mvn/version "RELEASE"}}}' -m clj-kondo.main --lint src
     - name: Run tests
       run: lein test
+    ‐ name: Push image 
+      uses: docker/build-push-action@v1
+      with:
+        username: ${{ github.actor }} 
+        password: ${{ github.token }}
+        registry: docker.pkg.github.com 
+        repository: jmcelwain/trader
+        tags: latest
+      env:
+        DOCKER_BUILDKIT=1
