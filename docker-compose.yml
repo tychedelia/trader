@@ -11,6 +11,11 @@ services:
       - "5432:5432"
     volumes:
       - db-data:/var/lib/postgresql/data
+  trader:
+    image: trader:latest
+    ports:
+      - "3000:3000"
+    build: ./
 
 volumes:
   db-data:
